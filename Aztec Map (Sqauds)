@@ -1,0 +1,231 @@
+--https://www.roblox.com/games/6872265039/BedWars-5v5s
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+
+--Variabls
+getgenv().ShowCaseTp = true
+getgenv().EmrladTP = true
+getgenv().Blue = true
+getgenv().Red = true
+getgenv().Green = true
+getgenv().Yellow = true
+getgenv().Gen1 = true
+getgenv().Gen2 = true
+getgenv().Gen3 = true
+getgenv().Gen4 = true
+
+--Window
+local Window = Rayfield:CreateWindow({
+    Name = "BedWars TP Hub (Aztec Map)",
+    LoadingTitle = "Fucker Hub",
+    LoadingSubtitle = "by Krik",
+    ConfigurationSaving = {
+       Enabled = true,
+       FolderName = nil, -- Create a custom folder for your hub/game
+       FileName = "BedWars Hub"
+    },
+    Discord = {
+       Enabled = false,
+       Invite = "ABCD", -- The Discord invite code, do not include discord.gg/
+       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+    },
+    KeySystem = true, -- Set this to true to use our key system
+    KeySettings = {
+       Title = "TP Hub",
+       Subtitle = "Key Is Nothing Type Enter",
+       Note = "Private Script",
+       FileName = "SiriusKey",
+       SaveKey = false,
+       GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+       Key = ""
+    }
+ })
+--Map Aztec
+ local Tab = Window:CreateTab("Main") -- Title, Image
+
+--Tween
+local ts = game:GetService("TweenService")
+local info = TweenInfo.new(5,Enum.EasingStyle.Linear,Enum.EasingDirection.Out,0,false,.30)
+
+local Section = Tab:CreateSection("Checker")
+
+local Button = Tab:CreateButton({
+   Name = "Check",
+   Callback = function()
+   midchecker()
+   end,
+})
+
+ local Section = Tab:CreateSection("Main")
+ local Toggle = Tab:CreateToggle({
+     Name = "MidTP",
+     CurrentValue = false,
+     Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+     Callback = function(Value)
+     ShowCaseTp = Value
+     while ShowCaseTp == true do
+    
+     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(330, 73, 327)
+     task.wait() 
+     end
+     end,
+  })
+  
+
+
+--Checker Functions
+function midchecker()
+wait(6)
+game.Players.LocalPlayer.Character.Humanoid.Jump = true
+end
+
+function basechecker()
+   wait(8)
+   game.Players.LocalPlayer.Character.Humanoid.Jump = true
+   end
+   
+
+
+local Tab = Window:CreateTab("Bases")
+local Section = Tab:CreateSection("Checker")
+local Button = Tab:CreateButton({
+   Name = "Check",
+   Callback = function()
+   midchecker()
+   end,
+})
+
+
+
+
+local Section = Tab:CreateSection("Blue Base")
+local Toggle = Tab:CreateToggle({
+   Name = "Tp to Blue",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+  Blue = Value
+  while Blue == true do
+   
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(85, 88, 327)
+   task.wait()
+  end
+   end,
+})
+
+local Section = Tab:CreateSection("Red Base")
+local Toggle = Tab:CreateToggle({
+   Name = "Tp to Red",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   Red = Value
+   while Red == true do
+      
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(330, 88, 83)
+      task.wait()
+
+   end
+   end,
+})
+
+
+local Section = Tab:CreateSection("GreenBase")
+local Toggle = Tab:CreateToggle({
+   Name = "Tp to Green",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   Green = Value
+   while Green == true do
+      
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(330, 88, 570)
+      task.wait()
+
+   end
+   end,
+})
+
+
+local Section = Tab:CreateSection("YellowBase")
+local Toggle = Tab:CreateToggle({
+   Name = "Tp to Yellow",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   Yellow = Value
+   while Yellow == true do
+      
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(574, 88, 326)
+      task.wait()
+
+   end
+   end,
+})
+
+local Tab = Window:CreateTab("Gens") -- Title, Image
+local Section = Tab:CreateSection("Checker")
+
+local Button = Tab:CreateButton({
+   Name = "Check",
+   Callback = function()
+   midchecker()
+   end,
+})
+
+local Section = Tab:CreateSection("Diamond Generators")
+
+
+local Toggle = Tab:CreateToggle({
+   Name = "1",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   Gen1 = Value
+   while Gen1 == true do
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(494, 55, 166)
+   task.wait()
+   end
+   end,
+})
+
+
+local Toggle = Tab:CreateToggle({
+   Name = "2",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   Gen2 = Value
+   while Gen2 ==true do
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(491, 55, 491)
+   task.wait()
+   end
+   end
+})
+
+
+local Toggle = Tab:CreateToggle({
+   Name = "3",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+      Gen3 = Value
+      while Gen3 == true do
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(169, 55, 163)
+      task.wait()
+   end
+end
+})
+
+
+local Toggle = Tab:CreateToggle({
+   Name = "4",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+      Gen4 = Value
+      while Gen4 == true do
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(165, 55, 488)
+      task.wait()
+   end
+end
+})
